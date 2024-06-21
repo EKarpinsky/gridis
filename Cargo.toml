@@ -1,0 +1,18 @@
+[package]
+name = "gridis"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+windows-core = "0.57.0"
+iced = "0.12"
+
+[dependencies.windows]
+version = "0.57"
+features = [
+    "Data_Xml_Dom",
+    "Win32_Foundation",
+    "Win32_Security",
+    "Win32_System_Threading",
+    "Win32_UI_WindowsAndMessaging",
+]
