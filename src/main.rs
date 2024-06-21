@@ -1,5 +1,5 @@
 use iced::widget::{Button, Column, Row, Text};
-use iced::{executor, Application, Command, Element, Settings, Theme};
+use iced::{executor, Application, Command, Element, Settings, Theme, window, Size, Pixels};
 use std::f64;
 use windows::{Win32::Foundation::*, Win32::UI::WindowsAndMessaging::*};
 
@@ -278,5 +278,29 @@ impl LayoutApp {
 }
 
 fn main() -> iced::Result {
-    LayoutApp::run(Settings::default())
+    LayoutApp::run(Settings {
+        id: None,
+        window: window::Settings {
+            size: Size {
+                width: 700f32,
+                height: 800f32,
+            },
+            position: Default::default(),
+            min_size: None,
+            max_size: None,
+            visible: true,
+            resizable: false,
+            decorations: true,
+            transparent: true,
+            level: Default::default(),
+            icon: None,
+            platform_specific: Default::default(),
+            exit_on_close_request: true,
+        },
+        flags: (),
+        fonts: Default::default(),
+        default_font: Default::default(),
+        default_text_size: Pixels::from(16.0),
+        antialiasing: false,
+    })
 }
