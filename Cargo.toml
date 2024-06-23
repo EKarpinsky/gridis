@@ -6,6 +6,7 @@ edition = "2021"
 [dependencies]
 windows-core = "0.57.0"
 iced = "0.12"
+display-info = "0.5.1"
 
 [dependencies.windows]
 version = "0.57"
